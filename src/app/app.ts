@@ -4,10 +4,11 @@ import { BoasVindas } from "./boas-vindas/boas-vindas";
 import { CidadeBlumenau } from './cidade-blumenau/cidade-blumenau';
 import { CidadeIndaial } from './cidade-indaial/cidade-indaial';
 import { CarrosHome } from './carros-home/carros-home';
+import { Navbar } from './navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BoasVindas, CidadeBlumenau, CidadeIndaial, CarrosHome, RouterLink],
+  imports: [RouterOutlet, BoasVindas, CidadeBlumenau, CidadeIndaial, CarrosHome, RouterLink, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

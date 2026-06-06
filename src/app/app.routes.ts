@@ -6,13 +6,15 @@ import { CarrosHome } from './carros-home/carros-home';
 import { CarrosCivicsi } from './carros-civicsi/carros-civicsi';
 import { CarrosRx7 } from './carros-rx7/carros-rx7';
 import { CarrosUptsi } from './carros-uptsi/carros-uptsi';
+import { FormCamposBasico } from './form-campos-basico/form-campos-basico';
 
 export const routes: Routes = [
-    { path: "cidade-blumenau", loadComponent: () => CidadeBlumenau },
-    { path: "cidade-indaial", loadComponent: () => CidadeIndaial },
+    { path: "cidade/blumenau", loadComponent: () => CidadeBlumenau },
+    { path: "cidade/indaial", loadComponent: () => CidadeIndaial },
     { path: "boas-vindas", loadComponent: () => BoasVindas },
-    { path: "carros-home", loadComponent: () => CarrosHome },
-    { path: "carros-civicsi", loadComponent: () => CarrosCivicsi },
-    { path: "carros-rx7", loadComponent: () => CarrosRx7 },
-    { path: "carros-uptsi", loadComponent: () => CarrosUptsi }
+    { path: "carros/home", loadComponent: () => CarrosHome },
+    { path: "carros/civicsi", loadComponent: () => CarrosCivicsi },
+    { path: "carros/rx7", loadComponent: () => CarrosRx7 },
+    { path: "carros/uptsi", loadComponent: () => CarrosUptsi },
+    { path: "formulario/campos-basico", loadComponent: () => FormCamposBasico}
 ];
