@@ -8,11 +8,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './exercicio01-dados-pessoais.scss',
 })
 export class Exercicio01DadosPessoais {
-  nome = signal<string>("");
-  sobrenome = signal<string>("");
-  idade = signal<number | null>(null);
+  campoNome = signal<string>("");
+  campoSobrenome = signal<string>("");
+  campoIdade = signal<number | null>(null);
 
   apresentarDados(): void {
+    const nomeCompleto: string = `${this.campoNome} ${this.campoSobrenome}`;
+    if(this.campoIdade == null){
+      alert("Digite uma idade valida")
+    }  
+    const idade: number = this.campoIdade;
+    alert(`Nome completo: ${nomeCompleto}
+    Idade: ${idade}`);
 
   }
 }

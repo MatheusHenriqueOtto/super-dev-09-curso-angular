@@ -8,6 +8,7 @@ import { CarrosRx7 } from './exercicios/carros-rx7/carros-rx7';
 import { CarrosUptsi } from './exercicios/carros-uptsi/carros-uptsi';
 import { FormCamposBasico } from './aula/form-campos-basico/form-campos-basico';
 import { HomeExercicio } from './exercicios/home-exercicio/home-exercicio';
+import { Exercicio01DadosPessoais } from './exercicios/exercicio01-dados-pessoais/exercicio01-dados-pessoais';
 
 
 export const routes: Routes = [
@@ -19,5 +20,6 @@ export const routes: Routes = [
     { path: "carros/rx7", loadComponent: () => CarrosRx7 },
     { path: "carros/uptsi", loadComponent: () => CarrosUptsi },
     { path: "formulario/campos-basico", loadComponent: () => FormCamposBasico },
-    { path: "exercicios/home", loadComponent: () => HomeExercicio}
+    { path: "exercicios/home", loadComponent: () => HomeExercicio},
+    { path: "exercicio/01", loadComponent: () => Exercicio01DadosPessoais}
 ];
