@@ -1,0 +1,157 @@
+/*
+1. Criar um componente exercicio01-dados-pessoais
+   No HTML criar:
+   - um campo para nome
+   - um campo para sobrenome
+   - um campo para idade
+   - um botão para apresentar os dados
+
+   O que deve ser feito:
+   - utilizar ngModel para relacionar os campos com variáveis do componente
+   - ao clicar no botão, apresentar um alert com nome completo e idade
+   - validar se nome, sobrenome e idade foram preenchidos
+   - caso algum campo não esteja preenchido, mostrar mensagem de alerta
+
+2. Criar um componente exercicio02-calculo-media
+   No HTML criar:
+   - um campo para nota 1
+   - um campo para nota 2
+   - um campo para nota 3
+   - um botão para calcular média
+
+   O que deve ser feito:
+   - relacionar os campos com signals
+   - ao clicar no botão, calcular a média das 3 notas
+   - apresentar a média em um alert
+   - informar também se o aluno foi aprovado ou reprovado
+   - validar se todas as notas foram preenchidas
+
+3. Criar um componente exercicio03-conversor-temperatura
+   No HTML criar:
+   - um campo para digitar uma temperatura
+   - duas opções do tipo radio para escolher:
+     a) Celsius para Fahrenheit
+     b) Fahrenheit para Celsius
+   - um botão para converter
+
+   O que deve ser feito:
+   - capturar o valor da temperatura digitada
+   - capturar a opção escolhida
+   - realizar a conversão conforme a opção marcada
+   - apresentar o resultado em um alert
+   - validar se o campo e a opção foram preenchidos
+
+4. Criar um componente exercicio04-cadastro-produto
+   No HTML criar:
+   - um campo para nome do produto
+   - um campo para preço
+   - um campo para quantidade
+   - um botão para calcular total
+   - um parágrafo para apresentar o resultado
+
+   O que deve ser feito:
+   - relacionar os campos com variáveis usando ngModel
+   - calcular o valor total do produto multiplicando preço pela quantidade
+   - apresentar no HTML o nome do produto e o valor total
+   - validar se todos os campos foram preenchidos corretamente
+
+5. Criar um componente exercicio05-imc
+   No HTML criar:
+   - um campo para nome
+   - um campo para peso
+   - um campo para altura
+   - um botão para calcular IMC
+
+   O que deve ser feito:
+   - capturar os valores informados
+   - calcular o IMC
+   - apresentar o resultado com o nome da pessoa
+   - informar também a classificação do IMC
+   - validar se peso e altura foram preenchidos
+   - impedir cálculo caso a altura seja igual a zero
+
+6. Criar um componente exercicio06-pedido-pizzaria
+   No HTML criar:
+   - um campo para nome do cliente
+   - um select para escolher o tamanho da pizza
+   - um campo para quantidade
+   - um checkbox para borda recheada
+   - um botão para calcular pedido
+   - uma área no HTML para apresentar o resumo
+
+   O que deve ser feito:
+   - utilizar ngModel em todos os campos
+   - definir um valor para cada tamanho de pizza
+   - adicionar valor extra caso a borda recheada esteja marcada
+   - multiplicar pelo total de pizzas
+   - apresentar um resumo do pedido com nome, tamanho, quantidade e total
+   - validar se os campos obrigatórios foram preenchidos
+
+7. Criar um componente exercicio07-plano-academia
+   No HTML criar:
+   - um campo para nome do aluno
+   - opções do tipo radio para escolher o plano
+   - um select para escolher o período do contrato
+   - um checkbox para indicar se deseja personal
+   - um botão para calcular valor final
+
+   O que deve ser feito:
+   - definir um valor base conforme o plano escolhido
+   - aplicar cálculo conforme o período do contrato
+   - adicionar valor extra caso o personal esteja marcado
+   - apresentar um alert com resumo do plano contratado
+   - validar se o nome foi preenchido
+   - validar se o plano foi escolhido
+
+8. Criar um componente exercicio08-simulador-frete
+   No HTML criar:
+   - um campo para nome do produto
+   - um campo para valor do produto
+   - um select para escolher a região de entrega
+   - um checkbox para entrega expressa
+   - um botão para calcular total
+   - um parágrafo para mostrar o resultado
+
+   O que deve ser feito:
+   - calcular o valor do frete conforme a região escolhida
+   - adicionar taxa extra caso a entrega expressa esteja marcada
+   - somar o valor do produto com o frete
+   - apresentar no HTML um resumo da compra
+   - validar se os campos obrigatórios foram preenchidos
+
+9. Criar um componente exercicio09-cadastro-usuario
+   No HTML criar:
+   - um campo para nome
+   - um campo para email
+   - um campo para senha
+   - um campo para confirmar senha
+   - um botão para cadastrar
+   - uma área para mostrar o resultado do cadastro
+
+   O que deve ser feito:
+   - capturar todos os valores com ngModel
+   - validar se todos os campos foram preenchidos
+   - validar se a senha e a confirmação são iguais
+   - se estiver tudo correto, apresentar uma mensagem de cadastro realizado
+   - se houver erro, apresentar a mensagem correspondente
+
+10. Criar um componente exercicio10-orcamento-viagem
+    No HTML criar:
+    - um campo para nome do viajante
+    - um select para escolher o destino
+    - um campo para quantidade de dias
+    - opções do tipo radio para escolher a hospedagem
+    - um checkbox para café da manhã
+    - um checkbox para passeio turístico
+    - um botão para calcular orçamento
+    - uma área grande no HTML para apresentar o resumo final
+
+    O que deve ser feito:
+    - definir um valor base conforme o destino
+    - definir um valor por diária conforme a hospedagem
+    - adicionar valores extras dos serviços marcados
+    - calcular o orçamento total da viagem
+    - apresentar um resumo completo com várias linhas
+    - validar se todos os campos obrigatórios foram preenchidos
+    - validar se o usuário escolheu uma hospedagem
+*/
