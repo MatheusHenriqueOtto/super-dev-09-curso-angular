@@ -1,0 +1,23 @@
+<h1>Cadastrar Cliente</h1>
+
+<div>
+    <div>
+        <label for="campo-nome">Nome</label>
+        <input type="text" id="campo-nome" [(ngModel)]="cliente().nome">
+    </div>
+    
+    <div>
+        <label for="campo-email">Email</label>
+        <input type="email" id="campo-email" [(ngModel)]="cliente().email">
+    </div>
+    
+    <div>
+        <label for="campo-telefone">Telefone</label>
+        <input type="number" id="campo-telefone" [(ngModel)]="cliente().telefone">
+    </div>
+    
+    <div>
+        <button (click)="cadastrarCliente()">Salvar</button>
+    </div>
+    
+</div>

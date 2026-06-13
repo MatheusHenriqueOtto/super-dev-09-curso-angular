@@ -1,0 +1,455 @@
+/*
+Exercício: Criar um CRUD básico de Clientes com múltiplas páginas, persistindo no localStorage.
+
+Objetivo:
+Criar um CRUD de clientes seguindo o mesmo formato utilizado no CRUD de produtos.
+O projeto deve ter páginas separadas para:
+- cadastrar
+- listar
+- editar
+
+Os dados devem ser persistidos no localStorage.
+
+Estrutura esperada:
+src/app
+    clientes
+        cliente-cadastrar
+        cliente-listar
+        cliente-editar
+
+Campos do cliente:
+- id
+- nome
+- email
+- telefone
+
+======================================================================
+ETAPA 1 - Criar o modelo
+======================================================================
+
+O que fazer:
+1. Criar um arquivo de modelo para o cliente.
+2. O modelo deve conter:
+   - id
+   - nome
+   - email
+   - telefone
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/models/produto.model.ts
+- Linhas: 1 até 7
+- Observar principalmente:
+  - a criação da interface
+  - os campos do modelo
+
+======================================================================
+ETAPA 2 - Criar o componente cliente-cadastrar
+======================================================================
+
+O que fazer:
+1. Criar o componente cliente-cadastrar dentro da pasta clientes.
+2. Esse componente será responsável por preencher os campos do cliente.
+3. Ele deve seguir a mesma ideia do componente produto-cadastrar.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-cadastrar/produto-cadastrar.ts
+- Linhas: 1 até 39
+- Observar principalmente:
+  - importação do FormsModule
+  - importação do modelo
+  - criação da propriedade com signal
+  - método salvar()
+  - método carregarProdutosDoLocalStorage()
+
+======================================================================
+ETAPA 3 - Criar a rota da tela de cadastro
+======================================================================
+
+O que fazer:
+1. Adicionar a rota para a tela de cadastro de clientes no app.routes.ts.
+2. A rota deve seguir o mesmo padrão usado no cadastro de produtos.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/app.routes.ts
+- Linhas: 5 até 7
+  - importação dos componentes de produto
+- Linhas: 13 até 15
+  - cadastro das rotas dos produtos
+
+Sugestão de análise:
+- observar como foi criada a rota de cadastro
+- observar como foi criada a rota de listagem
+- observar como foi criada a rota de edição com parâmetro id
+
+======================================================================
+ETAPA 4 - Criar o HTML da tela de cadastro
+======================================================================
+
+O que fazer:
+1. Criar um título para a página.
+2. Criar um campo para nome.
+3. Criar um campo para email.
+4. Criar um campo para telefone.
+5. Criar um botão para salvar chamando a função salvar().
+6. Opcionalmente, criar um link ou botão para voltar para a listagem.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-cadastrar/produto-cadastrar.html
+- Linhas: 2 até 19
+- Observar principalmente:
+  - estrutura dos labels
+  - estrutura dos inputs com ngModel
+  - botão chamando salvar()
+  - maneira como o HTML conversa com a propriedade do componente
+
+======================================================================
+ETAPA 5 - Implementar o salvar do cadastro
+======================================================================
+
+O que fazer:
+1. Consultar do localStorage a lista de clientes.
+2. Caso ainda não exista lista, iniciar uma lista vazia.
+3. Adicionar o novo cliente na lista.
+4. Persistir novamente no localStorage.
+5. Mostrar uma mensagem de sucesso.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-cadastrar/produto-cadastrar.ts
+- Linhas: 19 até 28
+  - método salvar()
+- Linhas: 30 até 38
+  - método carregarProdutosDoLocalStorage()
+
+Observar:
+- como buscar dados do localStorage
+- como converter string para lista
+- como adicionar novo item
+- como persistir novamente no localStorage
+
+======================================================================
+ETAPA 6 - Criar o componente cliente-listar
+======================================================================
+
+O que fazer:
+1. Criar o componente cliente-listar dentro da pasta clientes.
+2. Esse componente será responsável por mostrar os clientes cadastrados.
+3. Ele deve carregar os dados do localStorage.
+4. Ele deve permitir apagar e editar.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-listar/produto-listar.ts
+- Linhas: 1 até 63
+- Observar principalmente:
+  - signal da lista
+  - ngOnInit()
+  - método carregarProdutos()
+  - método apagar()
+
+======================================================================
+ETAPA 7 - Criar a rota da listagem
+======================================================================
+
+O que fazer:
+1. Adicionar a rota para a tela de listagem de clientes.
+2. Essa tela será a principal do CRUD de clientes.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/app.routes.ts
+- Linha: 14
+- Observar:
+  - como foi criada a rota de listagem de produtos
+
+======================================================================
+ETAPA 8 - Criar o HTML da listagem
+======================================================================
+
+O que fazer:
+1. Criar um título da página.
+2. Criar um botão ou link "Cadastrar Cliente".
+3. Criar uma tabela para mostrar os clientes.
+4. A tabela deve conter as colunas:
+   - Nome
+   - Email
+   - Telefone
+   - Ações
+5. Em ações, criar:
+   - botão ou link para editar
+   - botão para apagar
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-listar/produto-listar.html
+- Linhas: 1 até 38
+- Observar principalmente:
+  - link para cadastro
+  - quantidade de registros
+  - tabela
+  - uso do @for
+  - link de editar
+  - botão de apagar
+
+======================================================================
+ETAPA 9 - Carregar os clientes na listagem
+======================================================================
+
+O que fazer:
+1. Criar uma lista com signal para armazenar os clientes carregados.
+2. Ao abrir a tela, carregar os clientes do localStorage.
+3. Caso não exista nada salvo, considerar lista vazia.
+4. Exibir a lista na tabela.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-listar/produto-listar.ts
+- Linhas: 12 até 18
+  - signal da lista e ngOnInit()
+- Linhas: 28 até 40
+  - método carregarProdutos()
+
+Observar:
+- como buscar no localStorage
+- como converter os dados
+- como jogar o conteúdo dentro do signal
+
+======================================================================
+ETAPA 10 - Implementar a ação de apagar
+======================================================================
+
+O que fazer:
+1. Criar a função apagar recebendo o id.
+2. Pedir confirmação antes de apagar.
+3. Remover o cliente da lista.
+4. Persistir novamente a lista no localStorage.
+5. Atualizar a tela.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-listar/produto-listar.ts
+- Linhas: 42 até 62
+- Observar principalmente:
+  - atualização da lista
+  - filter para remover o item
+  - salvar novamente no localStorage
+
+Referência do botão na tela:
+- Arquivo: src/app/produtos/produto-listar/produto-listar.html
+- Linha: 30
+
+======================================================================
+ETAPA 11 - Criar o componente cliente-editar
+======================================================================
+
+O que fazer:
+1. Criar o componente cliente-editar.
+2. Esse componente deve carregar os dados de um cliente específico.
+3. O id do cliente deve vir pela rota.
+4. O usuário deve conseguir alterar os campos e salvar.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-editar/produto-editar.ts
+- Linhas: 1 até 74
+- Observar principalmente:
+  - importação do FormsModule
+  - importação do ActivatedRoute
+  - importação do Router
+  - criação da propriedade signal
+  - constructor com leitura do id
+  - método salvar()
+  - método carregarProdutosDoLocalStorage()
+
+/*
+======================================================================
+ETAPA 12 - Criar a rota da tela de edição
+======================================================================
+
+O que fazer:
+1. Adicionar a rota para a tela de edição de clientes.
+2. Essa rota deve receber o id do cliente por parâmetro.
+3. O botão Editar da listagem deve apontar para essa rota.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/app.routes.ts
+- Linha: 15
+- Observar:
+  - como foi criada a rota com parâmetro :id
+
+Referência do link de editar:
+- Arquivo: src/app/produtos/produto-listar/produto-listar.html
+- Linha: 29
+- Observar:
+  - como o id do item foi passado no routerLink
+
+======================================================================
+ETAPA 13 - Criar o HTML da tela de edição
+======================================================================
+
+O que fazer:
+1. Criar um título para a página.
+2. Criar um campo para nome.
+3. Criar um campo para email.
+4. Criar um campo para telefone.
+5. Criar um botão para salvar a alteração.
+6. Opcionalmente, criar um link ou botão para voltar para a listagem.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-editar/produto-editar.html
+- Linhas: 1 até 19
+- Observar principalmente:
+  - título da tela
+  - campos preenchidos com ngModel
+  - botão chamando salvar()
+  - mesma estrutura da tela de cadastro
+
+======================================================================
+ETAPA 14 - Carregar os dados do cliente para editar
+======================================================================
+
+O que fazer:
+1. Ler o id do cliente pela rota.
+2. Consultar a lista de clientes do localStorage.
+3. Verificar se existem clientes salvos.
+4. Procurar o cliente correspondente ao id da rota.
+5. Caso não exista cliente salvo, apresentar mensagem e voltar para a listagem.
+6. Caso o id não seja encontrado, apresentar mensagem e voltar para a listagem.
+7. Caso encontre, carregar os dados do cliente nos campos da tela.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-editar/produto-editar.ts
+- Linhas: 20 até 47
+- Observar principalmente:
+  - constructor
+  - leitura do id com ActivatedRoute
+  - leitura do localStorage
+  - validação quando não há registros
+  - validação quando o item não é encontrado
+  - preenchimento do signal com o item encontrado
+
+Referência das importações necessárias:
+- Arquivo: src/app/produtos/produto-editar/produto-editar.ts
+- Linhas: 1 até 4
+- Observar:
+  - FormsModule
+  - modelo
+  - ActivatedRoute
+  - Router
+
+======================================================================
+ETAPA 15 - Implementar o salvar da edição
+======================================================================
+
+O que fazer:
+1. Consultar a lista de clientes do localStorage.
+2. Encontrar o índice do cliente que está sendo editado.
+3. Alterar os dados desse cliente dentro da lista.
+4. Persistir novamente a lista no localStorage.
+5. Mostrar uma mensagem de sucesso.
+6. Navegar de volta para a listagem.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/produtos/produto-editar/produto-editar.ts
+- Linhas: 49 até 63
+- Observar principalmente:
+  - método salvar()
+  - busca do item pelo id
+  - alteração dos campos
+  - JSON.stringify
+  - localStorage.setItem
+  - navegação para a listagem após salvar
+
+Referência do método que carrega a lista:
+- Arquivo: src/app/produtos/produto-editar/produto-editar.ts
+- Linhas: 65 até 73
+- Observar:
+  - como consultar a lista do localStorage
+  - como tratar quando não houver dados
+
+======================================================================
+ETAPA 16 - Ajustar a navbar
+======================================================================
+
+O que fazer:
+1. Adicionar na navbar um link para a tela principal dos clientes.
+2. Seguir a mesma ideia do link já existente para produtos.
+3. A navbar deve facilitar o acesso ao novo CRUD.
+
+Referência no CRUD de produtos:
+- Arquivo: src/app/navbar/navbar.html
+- Linha: 9
+- Observar:
+  - como foi criado o link para produtos
+
+Referência do componente da navbar:
+- Arquivo: src/app/navbar/navbar.ts
+- Linhas: 1 até 10
+- Observar:
+  - estrutura simples do componente
+  - importação de RouterLink
+
+======================================================================
+ETAPA 17 - Testar o fluxo completo
+======================================================================
+
+O que fazer:
+1. Entrar na listagem de clientes.
+2. Clicar em "Cadastrar Cliente".
+3. Preencher os campos e salvar.
+4. Voltar para a listagem e verificar se o cliente aparece.
+5. Clicar em editar e alterar os dados.
+6. Salvar a edição e voltar para a listagem.
+7. Apagar um cliente.
+8. Recarregar a página e verificar se os dados continuam salvos no localStorage.
+
+Referências que ajudam a revisar o fluxo completo:
+- Cadastro:
+  - Arquivo: src/app/produtos/produto-cadastrar/produto-cadastrar.ts
+  - Linhas: 19 até 38
+- Listagem:
+  - Arquivo: src/app/produtos/produto-listar/produto-listar.ts
+  - Linhas: 12 até 62
+- Edição:
+  - Arquivo: src/app/produtos/produto-editar/produto-editar.ts
+  - Linhas: 20 até 73
+- Rotas:
+  - Arquivo: src/app/app.routes.ts
+  - Linhas: 9 até 15
+
+======================================================================
+ETAPA 18 - Resultado final esperado
+======================================================================
+
+Ao final do exercício o aluno deve ter:
+- modelo de cliente criado
+- rota de cadastro criada
+- rota de listagem criada
+- rota de edição criada
+- tela de cadastro funcionando
+- tela de listagem funcionando
+- tela de edição funcionando
+- ação de apagar funcionando
+- persistência no localStorage funcionando
+- navegação entre páginas funcionando
+
+======================================================================
+DESAFIO EXTRA (opcional)
+======================================================================
+
+Se terminar antes, fazer:
+1. Mostrar na listagem a quantidade total de clientes cadastrados.
+2. Ordenar os clientes pelo nome antes de apresentar.
+3. Mostrar uma mensagem quando não houver clientes cadastrados.
+4. Após salvar no cadastro, navegar automaticamente para a listagem.
+5. Após apagar, manter a listagem atualizada na tela.
+
+Referência no CRUD de produtos:
+- Quantidade na listagem:
+  - Arquivo: src/app/produtos/produto-listar/produto-listar.html
+  - Linha: 5
+- Ordenação:
+  - Arquivo: src/app/produtos/produto-listar/produto-listar.ts
+  - Linha: 37
+- Navegação após editar:
+  - Arquivo: src/app/produtos/produto-editar/produto-editar.ts
+  - Linha: 62
+
+Importante:
+- Seguir a mesma forma que foi utilizada no CRUD de produtos.
+- Não alterar a arquitetura que foi usada em aula.
+- O objetivo é repetir o mesmo padrão em outro cadastro para fixar o conteúdo.
+*/
